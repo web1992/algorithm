@@ -18,6 +18,7 @@ public class 接雨水Test01 {
 class Solution {
 
     // 动态规划
+    // 用图把柱子画出来
     public int trap(int[] height) {
 
         int len = height.length;
@@ -36,7 +37,7 @@ class Solution {
 
         for (int i = len - 2; i > 0; i--) {
 
-            // 当前i位置，又侧最高的柱子的高度
+            // 当前i位置，右侧最高的柱子的高度
             rightH[i] = Math.max(rightH[i + 1], height[i + 1]);
 
             // 取最的柱子的高度
@@ -45,6 +46,40 @@ class Solution {
             if (min > height[i]) {
                 ans += min - height[i];
             }
+        }
+
+        return ans;
+    }
+}
+
+
+class Solution2 {
+
+    // 双指针
+    // 用图把柱子画出来
+    public int trap(int[] height) {
+
+        int len = height.length;
+        int ans = 0;
+        int maxLeft = 0;
+        int maxRight = 0;
+
+        int left = 0;
+        int right = len - 1;
+
+        while (left < right) {
+
+            maxLeft = Math.max(maxLeft, height[left]);
+            maxRight = Math.max(maxRight, height[right]);
+
+            if (maxLeft < maxRight) {
+                ans += maxLeft - height[left];
+                left++;
+            } else {
+                ans += maxRight - height[right];
+                right--;
+            }
+
         }
 
         return ans;
