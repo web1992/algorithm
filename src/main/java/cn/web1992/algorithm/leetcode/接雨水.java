@@ -23,6 +23,11 @@ public class 接雨水 {
         int[] leftH = new int[len];
         int[] rightH = new int[len];
 
+        // 初始化
+        leftH[0] = 0;
+        rightH[len - 1] = 0;
+
+        // 从1开始，最左+最右 不能接雨水
         for (int i = 1; i < len; i++) {
             leftH[i] = Math.max(leftH[i - 1], height[i - 1]);
         }
