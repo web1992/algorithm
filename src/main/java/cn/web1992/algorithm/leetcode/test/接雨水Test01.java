@@ -30,14 +30,18 @@ class Solution {
         int ans = 0;
 
         for (int i = 1; i < len; i++) {
+            // 当前i位置，左侧最高的柱子的高度
             leftH[i] = Math.max(height[i - 1], leftH[i - 1]);
         }
 
         for (int i = len - 2; i > 0; i--) {
 
+            // 当前i位置，又侧最高的柱子的高度
             rightH[i] = Math.max(rightH[i + 1], height[i + 1]);
-            int min = Math.min(rightH[i], leftH[i]);
 
+            // 取最的柱子的高度
+            int min = Math.min(rightH[i], leftH[i]);
+            // 对比高度，计算能接到的雨水
             if (min > height[i]) {
                 ans += min - height[i];
             }
