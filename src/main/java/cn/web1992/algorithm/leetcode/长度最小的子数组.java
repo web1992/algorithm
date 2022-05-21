@@ -22,14 +22,14 @@ public class 长度最小的子数组 {
 
             int minLen = Integer.MAX_VALUE;
             int sum = 0;
-            int i = 0;
+            int start = 0;
 
             for (int j = 0; j < nums.length; j++) {
 
                 sum += nums[j];
                 while (sum >= target) {
-                    minLen = Math.min(minLen, j - i + 1);
-                    sum -= nums[i++];
+                    minLen = Math.min(minLen, j - start + 1);
+                    sum -= nums[start++];
                 }
             }
 
