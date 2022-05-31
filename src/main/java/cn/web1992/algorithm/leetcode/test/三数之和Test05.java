@@ -45,6 +45,7 @@ public class 三数之和Test05 {
             }
 
             // -2, 0, 1, 1, 2
+            // [-2,0,0,2,2]
             while (left < right) {
 
                 int sum = curN + nums[left] + nums[right];
