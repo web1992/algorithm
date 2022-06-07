@@ -27,6 +27,7 @@ public class 最长回文子串 {
 
         for (int r = 1; r < strLen; r++) {
             for (int l = 0; l < r; l++) {
+                // r - l <= 2 如果 s.charAt(r) == s.charAt(l) + （r - l <= 2） 成立，那么字符串一定是回文串，如 cbc ,l=0,r=2,arr[r]=c,arr[l]=c,
                 if (s.charAt(l) == s.charAt(r) && (r - l <= 2 || dp[l + 1][r - 1])) {
                     dp[l][r] = true;
                     if (r - l + 1 > maxLen) {
