@@ -26,17 +26,19 @@ public class 丑数Test01 {
             for (int i = 1; i < n; i++) {
 
                 int min = Math.min(dp[p2] * 2, dp[p3] * 3);
-                dp[i] = Math.min(dp[p5] * 5, min);
+                min = Math.min(dp[p5] * 5, min);
 
-                if (dp[i] == dp[p2] * 2) {
+                if (min == dp[p2] * 2) {
                     p2++;
                 }
-                if (dp[i] == dp[p3] * 3) {
+                if (min == dp[p3] * 3) {
                     p3++;
                 }
-                if (dp[i] == dp[p5] * 5) {
+                if (min == dp[p5] * 5) {
                     p5++;
                 }
+                dp[i] = min;
+
             }
 
             return dp[n - 1];
