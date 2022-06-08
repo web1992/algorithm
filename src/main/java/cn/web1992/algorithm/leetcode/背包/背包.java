@@ -30,7 +30,7 @@ public class 背包 {
                     // 重量放不下，使用上一个物品的价值
                     dp[i][j] = dp[i - 1][j];
                 } else {
-                    // 上一个物品的价值 与上一个物品的背包容量为 j - weight[i - 1] 的价值 + 此新价值（value[i - 1]）
+                    // 上一个物品的价值 与上一个物品的背包容量为 (j - weight[i - 1] 的价值) + 此新价值 (value[i - 1])
                     // value，weight 中的i-1 是因为索引从1开始
                     dp[i][j] = Math.max(dp[i - 1][j], dp[i - 1][j - weight[i - 1]] + value[i - 1]);
                 }
