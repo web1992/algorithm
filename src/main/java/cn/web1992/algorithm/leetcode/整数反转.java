@@ -4,6 +4,7 @@ package cn.web1992.algorithm.leetcode;
  * @author web1992
  * @date 2022/6/9  09:09
  * @link {https://leetcode.cn/problems/reverse-integer/}
+ * @link {https://www.jianshu.com/p/3b19b9fc030e}
  * @see Math#addExact 参考此方法是如果 处理溢出的
  */
 public class 整数反转 {
