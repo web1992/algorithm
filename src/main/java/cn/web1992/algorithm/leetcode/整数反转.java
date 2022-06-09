@@ -4,6 +4,7 @@ package cn.web1992.algorithm.leetcode;
  * @author web1992
  * @date 2022/6/9  09:09
  * @link {https://leetcode.cn/problems/reverse-integer/}
+ * @see Math#addExact 参考此方法是如果 处理溢出的
  */
 public class 整数反转 {
 
@@ -24,6 +25,7 @@ public class 整数反转 {
             while (x != 0) {
 
                 int t = x % 10;
+                // 溢出判断
                 if ((ans * 10 + t) / 10 != ans) {
                     return 0;
                 }
