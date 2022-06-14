@@ -1,12 +1,12 @@
 package cn.web1992.algorithm.leetcode;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 /**
  * @author web1992
  * @date 2022/6/14  09:13
  * @link {https://leetcode.cn/problems/shortest-distance-to-a-character/}
+ * @link {https://www.bilibili.com/video/BV1h34y1Y7ec?share_source=copy_pc}
  */
 public class 字符的最短距离 {
     public static void main(String[] args) {
@@ -18,6 +18,7 @@ public class 字符的最短距离 {
         System.out.println(Arrays.toString(arr));
     }
 
+    // 两次遍历
     static class Solution {
 
         public int[] shortestToChar(String s, char c) {
@@ -25,15 +26,19 @@ public class 字符的最短距离 {
             int len = s.length();
             int[] ans = new int[len];
 
-            int idx = -len;// idx=-len,i-idx = i+len 可能是一个非法的值，会被后面的 min 中被替换，题目中s中一定包含c
+            // idx 从 i->len (0->len)
+            // idx 的最大值是len
+            int idx = -len;
             for (int i = 0; i < len; i++) {
                 if (c == s.charAt(i)) {
                     idx = i;
                 }
                 ans[i] = i - idx;
+                System.out.println(ans[i]);
             }
 
-
+            // idx 从 len-1 -> i
+            // idx 最大是 2*len
             idx = 2 * len;
             for (int i = len - 1; i >= 0; i--) {
                 if (c == s.charAt(i)) {
