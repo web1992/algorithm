@@ -19,6 +19,7 @@ public class 数组中的k_diff数对 {
 
     static class Solution {
 
+        // a-b=k
         public int findPairs(int[] nums, int k) {
 
             Set<Integer> searched = new HashSet<>();
