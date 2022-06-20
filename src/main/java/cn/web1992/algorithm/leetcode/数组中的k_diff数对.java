@@ -7,6 +7,7 @@ import java.util.Set;
  * @author web1992
  * @date 2022/6/20  09:24
  * @link {https://leetcode.cn/problems/k-diff-pairs-in-an-array/}
+ * @link {https://www.bilibili.com/video/BV1sT411G7eu}
  */
 public class 数组中的k_diff数对 {
     public static void main(String[] args) {
@@ -19,19 +20,21 @@ public class 数组中的k_diff数对 {
 
     static class Solution {
 
-        // a-b=k
         public int findPairs(int[] nums, int k) {
 
             Set<Integer> searched = new HashSet<>();
             Set<Integer> ans = new HashSet<>();
 
+            // |num-x| == k
+            // 1. num-k=x
+            // 2. x-num=k -> x=num+k
             for (int num : nums) {
 
-                if (searched.contains(num - k)) {
+                if (searched.contains(num - k)) {// 取最小/取最大
                     ans.add(num - k);
                 }
 
-                if (searched.contains(num + k)) {
+                if (searched.contains(num + k)) {// 取最小/取最大
                     ans.add(num);
                 }
 
