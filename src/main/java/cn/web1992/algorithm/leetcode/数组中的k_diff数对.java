@@ -27,7 +27,7 @@ public class 数组中的k_diff数对 {
             for (int num : nums) {
 
                 if (searched.contains(num - k)) {
-                    ans.add(num);
+                    ans.add(num - k);
                 }
 
                 if (searched.contains(num + k)) {
