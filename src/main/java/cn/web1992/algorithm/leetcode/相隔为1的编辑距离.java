@@ -5,6 +5,7 @@ package cn.web1992.algorithm.leetcode;
  * @date 2022/6/21  09:47
  * @link {https://www.bilibili.com/video/BV1eN4y137Sz}
  * @link {https://leetcode.cn/problems/one-edit-distance/}
+ * @link 相隔为1的编辑距离.png
  */
 public class 相隔为1的编辑距离 {
 
@@ -20,8 +21,8 @@ public class 相隔为1的编辑距离 {
 
         public boolean oneEditDistance(String s, String t) {
 
-            int sLen = s.length();
-            int tLen = t.length();
+            int sLen = s.length();// 较长的字符串
+            int tLen = t.length();// 较短的字符串
 
             if (sLen < tLen) {
                 return oneEditDistance(t, s);
@@ -34,11 +35,14 @@ public class 相隔为1的编辑距离 {
             for (int i = 0; i < tLen; i++) {
                 // 存在不相等的字符
                 if (s.charAt(i) != t.charAt(i)) {
-                    if (sLen == tLen) {// 替换
+                    // 找到了不相等的字符串了，
+                    if (sLen == tLen) {
+                        // s=abc,t=aac
+                        // 二个字符串长度相等，但是第i个字符不相等，那么需要 替换
                         return s.charAt(i + 1) == t.charAt(i + 1);
                     } else {
-                        // sLen- tLen == 1
-                        // abdc -> abc
+                        // s= abdc, t=abc
+                        // 二个字符串长度不相等，需要插入/删除
                         return s.charAt(i + 1) == t.charAt(i);
                     }
                 }
