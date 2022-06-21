@@ -6,6 +6,7 @@ package cn.web1992.algorithm.leetcode;
  * @link {https://www.bilibili.com/video/BV1eN4y137Sz}
  * @link {https://leetcode.cn/problems/one-edit-distance/}
  * @link 相隔为1的编辑距离.png
+ * @link {https://github.com/web1992/algorithm/blob/main/images/%E7%9B%B8%E9%9A%94%E4%B8%BA1%E7%9A%84%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB.png}
  */
 public class 相隔为1的编辑距离 {
 
