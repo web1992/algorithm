@@ -26,6 +26,7 @@ public class 相隔为1的编辑距离 {
             int tLen = t.length();// 较短的字符串
 
             if (sLen < tLen) {
+                // 顺序调换
                 return oneEditDistance(t, s);
             }
 
