@@ -30,6 +30,8 @@ public class 数组中的k_diff数对 {
             // 2. x-num=k -> x=num+k
             for (int num : nums) {
 
+                // 因为是数对，如果只取最大/最小值 即可统计所有的数对了
+                // 最大值/最小值，如果存在重复set可去重
                 if (searched.contains(num - k)) {// 取最小/取最大
                     ans.add(num - k);
                 }
