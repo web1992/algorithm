@@ -13,6 +13,9 @@ public class 最后一块石头的重量II {
 
     }
 
+    /**
+     * 简单来说就是任意选i块石头，使得他们的重量趋近于总重量的一半，因为这样和另一半抵消的差值就是最小的
+     */
     static class Solution {
 
         public int lastStoneWeightII(int[] stones) {
