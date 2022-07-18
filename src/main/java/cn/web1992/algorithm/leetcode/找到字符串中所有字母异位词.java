@@ -64,7 +64,7 @@ public class 找到字符串中所有字母异位词 {
                     }
 
                     char cc = s.charAt(left);
-                    System.out.println("valid=" + valid + " cc=" + cc + " need=" + need + " sub str =" + s.substring(left, right));
+                    // System.out.println("valid=" + valid + " cc=" + cc + " need=" + need + " sub str =" + s.substring(left, right));
                     left++;
 
                     if (null != need.get(cc)) {
