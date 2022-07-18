@@ -58,13 +58,14 @@ public class 找到字符串中所有字母异位词 {
                     }
                 }
 
-                while (right - left >= p.length()) {
-
-                    if (valid == need.size()) {
+                // 这里，不能使用 valid == need.size() 这个相等进行判断，比如 abcb,此时并不是 【字母异位词】
+                while (right - left == p.length()) {
+                    if (valid == need.size()) {// 【len 相等】 + 【valid 相等】
                         ans.add(left);
                     }
 
                     char cc = s.charAt(left);
+                    System.out.println("valid=" + valid + " cc=" + cc + " need=" + need + " sub str =" + s.substring(left, right));
                     left++;
 
                     if (null != need.get(cc)) {
