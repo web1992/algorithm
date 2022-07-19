@@ -10,7 +10,8 @@ import java.util.Arrays;
 public class QuickSort4 {
 
     public static void main(String[] args) {
-        int[] arr = new int[]{1, 5, 6, 72, 432, 234, 2, 9, -2, 0, -1, -2};
+        //int[] arr = new int[]{1, 5, 6, 72, 432, 234, 2, 9, -2, 0, -1, -2};
+        int[] arr = new int[]{9, 8, 3, 5};
         sort(arr);
         System.out.println(Arrays.toString(arr));
     }
@@ -38,8 +39,11 @@ public class QuickSort4 {
     // left                          right
     private static int part(int[] arr, int left, int right) {
         int p = left + 1;
+
         for (int i = p; i <= right; i++) {
-            if (arr[i] < arr[left]) {// i>=left
+            // i=p(lef+1)=> i++ => 因此 i>=left; i 的值在left值得右边
+            // 因此[i]<[left]时，即[left]值大的时候交换位置
+            if (arr[i] < arr[left]) {
                 swap(arr, i, p);// i>=p
                 p++;
             }

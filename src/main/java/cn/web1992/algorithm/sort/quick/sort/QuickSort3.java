@@ -16,21 +16,37 @@ public class QuickSort3 {
     }
 
     private static void sort(int[] arr) {
-        sort0(arr, 0, arr.length);
+        sort0(arr, 0, arr.length - 1);
     }
 
     // 找到p点，小于p点的放在左边，大于p点的放在右边
     private static void sort0(int[] arr, int left, int right) {
 
+        if (left >= right) {
+            return;
+        }
+
+        int p = part(arr, left, right);
+        sort0(arr, left, p - 1);
+        sort0(arr, p + 1, right);
 
     }
+
     // s p,i
     // . .  . . . . . . . . . . . . .
     // ↑                            ↑
     // left                         right
     private static int part(int[] arr, int left, int right) {
 
-        return 0;
+        int pre = left + 1;
+        for (int cur = pre; cur <= right; cur++) {
+            if (arr[cur] < arr[left]) {
+                swap(arr, cur, pre);
+                pre++;
+            }
+        }
+        swap(arr, left, pre - 1);
+        return pre - 1;
     }
 
 
