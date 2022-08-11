@@ -16,6 +16,13 @@ public class 不同路径 {
 
     static class Solution {
 
+        /**
+         * 动态规划
+         *
+         * @param m
+         * @param n
+         * @return
+         */
         public int uniquePaths(int m, int n) {
 
             int[][] dp = new int[m][n];
