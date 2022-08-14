@@ -13,6 +13,9 @@ public class 分割等和子集 {
         System.out.println("ans=" + ans);
     }
 
+    /**
+     * 问题抽象：从集合中选取一组数据，去满足某个条件
+     */
     static class Solution {
         public boolean canPartition(int[] nums) {
 
