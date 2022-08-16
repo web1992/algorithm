@@ -21,10 +21,10 @@ public class 最长回文子序列2 {
             int len = s.length();
 
             int[][] dp = new int[len][len];
-            for (int i = len - 2; i >= 0; i--) {
+            for (int i = len - 1; i >= 0; i--) {
                 dp[i][i] = 1;
                 for (int j = i + 1; j < len; j++) {
-                    System.out.println(i + "-" + j);
+//                    System.out.println(i + "-" + j);
                     if (s.charAt(i) == s.charAt(j)) {
                         dp[i][j] = dp[i + 1][j - 1] + 2;
                     } else {
