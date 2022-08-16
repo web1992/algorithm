@@ -5,8 +5,9 @@ package cn.web1992.algorithm.leetcode;
  * @date 2022/5/3  15:48
  * @link {https://leetcode-cn.com/problems/longest-palindromic-substring/}
  * @link {https://leetcode.cn/problems/longest-palindromic-substring/solution/zhong-xin-kuo-san-fa-he-dong-tai-gui-hua-by-reedfa/}
+ * @see 回文子串
  */
-public class 最长回文子串 {
+public class 最长回文子串2 {
 
 
     public static void main(String[] args) {
@@ -16,13 +17,11 @@ public class 最长回文子串 {
         System.out.println(ans);
     }
 
-
     /**
      * @param s
      * @return
-     * @see 最长回文子串2
+     * @see 回文子串 参考 回文子串 这个写的
      */
-    @Deprecated
     public static String longestPalindrome(String s) {
         if (s == null || s.length() < 2) {
             return s;
@@ -34,19 +33,19 @@ public class 最长回文子串 {
 
         boolean[][] dp = new boolean[strLen][strLen];
 
-        for (int r = 1; r < strLen; r++) {
-            for (int l = 0; l < r; l++) {
-                // r - l <= 2 如果 s.charAt(r) == s.charAt(l) + （r - l <= 2） 成立，那么字符串一定是回文串，如 cbc ,l=0,r=2,arr[r]=c,arr[l]=c,
-                if (s.charAt(l) == s.charAt(r) && (r - l <= 2 || dp[l + 1][r - 1])) {
-                    dp[l][r] = true;
-                    if (r - l + 1 > maxLen) {
-                        maxLen = r - l + 1;
-                        maxStart = l;
-                        maxEnd = r;
+        for (int i = strLen; i >= 0; i--) {
+            for (int j = i; j < strLen; j++) {
 
+                if (s.charAt(i) == s.charAt(j)) {
+                    if (j - i <= 1 || (dp[i + 1][j - 1])) {// j,i 相等，或者间隔相差1 or 上一个格子是 回文子串
+                        dp[i][j] = true;
+                        if (j - i >= maxLen) {// 这里是倒着遍历的，因此需要>=
+                            maxStart = i;
+                            maxEnd = j;
+                            maxLen = j - i;
+                        }
                     }
                 }
-
             }
 
         }
