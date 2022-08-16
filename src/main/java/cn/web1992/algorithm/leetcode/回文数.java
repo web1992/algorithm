@@ -9,7 +9,7 @@ public class 回文数 {
 
     public static void main(String[] args) {
 
-        boolean ans = new Solution().isPalindrome(10);
+        boolean ans = new Solution().isPalindrome(121);
         System.out.println(ans);
     }
 
@@ -25,12 +25,14 @@ public class 回文数 {
             }
             int num = 0;
 
-            while (x > num) {
-                int t = x % 10;
+            // x =123
+            while (x > num) {// 比x>0, 循环的次数会少很多
+                int t = x % 10;// 取模
                 num = num * 10 + t;
-                x /= 10;
+                x /= 10; // 取整
+                System.out.println("x=" + x + " num=" + num);
             }
-            return num == x || num / 10 == x;
+            return num == x || num / 10 == x;// num/10 -> 121 这种case
         }
     }
 }
