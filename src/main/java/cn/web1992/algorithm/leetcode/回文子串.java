@@ -27,7 +27,7 @@ public class 回文子串 {
             boolean[][] dp = new boolean[len][len];
 
             for (int i = len; i >= 0; i--) {
-                for (int j = i; j < len; j++) {
+                for (int j = i; j < len; j++) {// 这里 j 从i 开始
                     // 相等
                     if (s.charAt(i) == s.charAt(j)) {
                         if (i == j || j - i == 1) {// i,j 相等 or i,j间隔差1
