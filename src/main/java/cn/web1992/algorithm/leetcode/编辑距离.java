@@ -51,11 +51,12 @@ public class 编辑距离 {
 
                     // 调用 charAt 需要-1 因为i,j从1开始
                     // 不要和dp中的[i][j]搞混了
-                    if (word1.charAt(i - 1) == word2.charAt(j - 1)) {
+                    if (word1.charAt(i - 1) == word2.charAt(j - 1)) {// 如果以，i,j结尾的指向的字符相等，则不需要操作
                         dp[i][j] = dp[i - 1][j - 1];
                     } else {
+                        //  Min(插入，删除，替换)
                         int min1 = Math.min(dp[i][j - 1], dp[i - 1][j]);
-                        dp[i][j] = Math.min(min1, dp[i - 1][j - 1]) + 1;
+                        dp[i][j] = Math.min(min1, dp[i - 1][j - 1]) + 1;// dp[i - 1][j - 1] i,j 指向的字符不相等的时候，需要替换字符，因此也需要+1
                     }
                 }
             }
