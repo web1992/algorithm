@@ -2,6 +2,8 @@ package cn.web1992.algorithm.leetcode;
 
 /**
  * @link {https://leetcode.cn/problems/delete-operation-for-two-strings/}
+ * <p>
+ * @link {https://programmercarl.com/0583.%E4%B8%A4%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%88%A0%E9%99%A4%E6%93%8D%E4%BD%9C.html#%E6%80%9D%E8%B7%AF}
  */
 public class 两个字符串的删除操作 {
 
