@@ -5,6 +5,7 @@ import java.util.Arrays;
 
 /**
  * @link {https://leetcode.cn/problems/distinct-subsequences/}
+ * @link {https://leetcode.cn/problems/distinct-subsequences/solution/by-nehzil-1ndq/}
  * @link {https://programmercarl.com/0115.%E4%B8%8D%E5%90%8C%E7%9A%84%E5%AD%90%E5%BA%8F%E5%88%97.html#_115-%E4%B8%8D%E5%90%8C%E7%9A%84%E5%AD%90%E5%BA%8F%E5%88%97}
  */
 public class 不同的子序列 {
@@ -52,10 +53,10 @@ public class 不同的子序列 {
             for (int i = 1; i <= len1; i++) {
                 for (int j = 1; j <= len2; j++) {
                     if (s.charAt(i - 1) == t.charAt(j - 1)) {
-                        dp[i][j] = dp[i - 1][j - 1] + dp[i - 1][j];// s的子串个数 + t的子串个数
+                        dp[i][j] = dp[i - 1][j - 1] + dp[i - 1][j];// s中[i-1][j-1]的子串个数 + s中[i-1]的子串个数
                     } else {
-                        // i-1 !=j-1时， i-1 表示 => 以i结尾之前个数（s的子串个数）
-                        dp[i][j] = dp[i - 1][j];// s的子串个数
+                        // i-1 !=j-1时， i-1 表示 => 以i结尾之前个数（s中[i-1]的子串个数）
+                        dp[i][j] = dp[i - 1][j];// s中[i-1]的子串个数
                     }
                 }
             }
