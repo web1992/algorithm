@@ -52,9 +52,10 @@ public class 不同的子序列 {
             for (int i = 1; i <= len1; i++) {
                 for (int j = 1; j <= len2; j++) {
                     if (s.charAt(i - 1) == t.charAt(j - 1)) {
-                        dp[i][j] = dp[i - 1][j - 1] + dp[i - 1][j];
+                        dp[i][j] = dp[i - 1][j - 1] + dp[i - 1][j];// s的子串个数 + t的子串个数
                     } else {
-                        dp[i][j] = dp[i - 1][j];
+                        // i-1 !=j-1时， i-1 表示 => 以i结尾之前个数（s的子串个数）
+                        dp[i][j] = dp[i - 1][j];// s的子串个数
                     }
                 }
             }
