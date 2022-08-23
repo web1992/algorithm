@@ -27,6 +27,7 @@ public class 二叉搜索树中的搜索2 {
          * @return
          */
         public TreeNode searchBST(TreeNode root, int val) {
+            // 结束条件
             if (null == root || root.val == val) {
                 return root;
             }
