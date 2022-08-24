@@ -5,4 +5,7 @@ package cn.web1992.algorithm.sort;
  * @date 2022/4/18  10:20
  */
 public class 桶排序 {
+    public static void main(String[] args) {
+
+    }
 }
