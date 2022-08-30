@@ -22,12 +22,14 @@ public class 二叉树的层平均值 {
 
             while (!queue.isEmpty()) {
                 int len = queue.size();
+                int size = queue.size();
 
-                List<Integer> _list = new ArrayList<>();
+
+                double sum = 0;
                 while (len > 0) {
 
                     TreeNode _node = queue.poll();
-                    _list.add(_node.val);
+                    sum += (_node.val);
 
                     if (_node.left != null) {
                         queue.offer(_node.left);
@@ -40,7 +42,7 @@ public class 二叉树的层平均值 {
                     len--;
                 }
 
-                ans.add(_list.stream().mapToDouble(Integer::doubleValue).average().getAsDouble());
+                ans.add(sum / size);
             }
 
 
