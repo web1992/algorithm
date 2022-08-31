@@ -4,7 +4,7 @@ package cn.web1992.algorithm.leetcode;
 /**
  * @link {https://leetcode.cn/problems/search-in-a-binary-search-tree/}
  */
-public class 二叉搜索树中的搜索2 {
+public class 二叉搜索树中的搜索_递归 {
 
     public static void main(String[] args) {
 
