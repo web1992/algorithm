@@ -21,9 +21,30 @@ public class 完全二叉树的节点个数 {
 
         public int countNodes2(TreeNode root) {
 
-            int nodes = 0;
+            if (null == root) {
+                return 0;
+            }
 
-            return nodes;
+            int leftH = 0;
+            int rightH = 0;
+
+            TreeNode left = root;
+            while (left.left != null) {
+                left = left.left;
+                leftH++;
+            }
+
+            TreeNode right = root;
+            while (right.right != null) {
+                right = right.right;
+                rightH++;
+            }
+
+            if (leftH == rightH) {
+                return (2 << leftH) - 1;
+            }
+
+            return countNodes2(root.left) + countNodes2(root.right) + 1;
         }
     }
 
