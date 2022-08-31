@@ -12,8 +12,16 @@ import java.util.stream.Collectors;
  */
 public class 二叉树的所有路径 {
 
+    public static void main(String[] args) {
+        Integer[] arr = new Integer[]{1, 2, 3, null, 5};
+        TreeNode root = TreeNode.build(arr);
+        List<String> stringList = new Solution().binaryTreePaths(root);
+        for (String s : stringList) {
+            System.out.println(s);
+        }
+    }
 
-    class Solution {
+    static class Solution {
 
         List<String> ans = new ArrayList<>();
 
