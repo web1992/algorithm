@@ -2,7 +2,7 @@ package cn.web1992.algorithm.leetcode;
 
 /**
  * @link {https://leetcode.cn/problems/palindromic-substrings/}
- * @desc 回文子串 的数目
+ * @implNote 回文子串 的数目
  */
 public class 回文子串 {
 
