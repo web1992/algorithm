@@ -8,7 +8,7 @@ import java.util.Arrays;
  */
 public class 插入排序 {
     public static void main(String[] args) {
-        int[] arr = new int[]{-2, 99, 33, 1, 3, 4, 11, 22, 34, -1};
+        int[] arr = new int[]{6,5,4,3,2,1};
         sort(arr);
         System.out.println("sorted:" + Arrays.toString(arr));
     }
@@ -35,6 +35,7 @@ public class 插入排序 {
             // 插入
             arr[j + 1] = val;
 
+             System.out.println();
         }
     }
 }
