@@ -9,7 +9,7 @@ public class 最后一块石头的重量II {
 
         int[] stones = new int[]{2, 7, 4, 1, 8, 1};
         int ans = new Solution().lastStoneWeightII(stones);
-        System.out.println("ans" + ans);
+        System.out.println("ans=" + ans);
 
     }
 
@@ -20,7 +20,21 @@ public class 最后一块石头的重量II {
 
         public int lastStoneWeightII(int[] stones) {
 
-            return 0;
+            int sum = 0;
+            for (int stone : stones) {
+                sum += stone;
+            }
+
+            int target = sum / 2;
+            int[] dp = new int[target + 1];
+
+            for (int i = 0; i < stones.length; i++) {
+                for (int j = target; j >= stones[i]; j--) {
+                    dp[j] = Math.max(dp[j], dp[j - stones[i]] + stones[i]);
+                }
+            }
+
+            return sum - dp[target] - dp[target];
         }
     }
 }

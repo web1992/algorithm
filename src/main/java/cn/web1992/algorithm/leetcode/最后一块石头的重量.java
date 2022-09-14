@@ -9,27 +9,35 @@ public class 最后一块石头的重量 {
 
     public static void main(String[] args) {
 
+        int[] arr = new int[]{2, 7, 4, 1, 8, 1};
+        int ans = new Solution().lastStoneWeight(arr);
+        System.out.println(ans);
     }
 
-    public int lastStoneWeight(int[] stones) {
-        int n = stones.length;
-        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(n, (a, b) -> b - a);
-        for (int stone : stones) {
-            maxHeap.add(stone);
-        }
+    static class Solution {
 
-        while (maxHeap.size() >= 2) {
-            Integer head1 = maxHeap.poll();
-            Integer head2 = maxHeap.poll();
-            if (head1.equals(head2)) {
-                continue;
+
+        public int lastStoneWeight(int[] stones) {
+
+            PriorityQueue<Integer> queue = new PriorityQueue<>((a, b) -> b - a);
+
+            for (int stone : stones) {
+                queue.offer(stone);
             }
-            maxHeap.offer(head1 - head2);
+
+            while (queue.size() > 1) {
+                Integer a = queue.poll();
+                Integer b = queue.poll();
+                if (a > b) {
+                    queue.offer(a - b);
+                }
+            }
+            if (queue.isEmpty()) {
+                return 0;
+            }
+            return queue.poll();
         }
 
-        if (maxHeap.isEmpty()) {
-            return 0;
-        }
-        return maxHeap.poll();
     }
+
 }
