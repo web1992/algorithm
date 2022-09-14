@@ -7,6 +7,7 @@ import java.util.Arrays;
  * @date 2022/4/18  10:20
  * @link {https://time.geekbang.org/column/article/42038?screen=full}
  * @implNote 计数排序（Counting sort）
+ * @implNote min - max  范围值太大 就不适合用 计数排序了
  */
 public class 计数排序 {
 
