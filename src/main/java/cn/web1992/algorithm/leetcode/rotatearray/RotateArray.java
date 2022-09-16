@@ -6,6 +6,7 @@ import java.util.Arrays;
  * @author web1992
  * @date 2020/2/27  22:51
  * @link {https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/1/array/23/}
+ * @link {https://leetcode.cn/leetbook/read/top-interview-questions-easy/x2skh7/}
  */
 public class RotateArray {
     public static void main(String[] args) {
