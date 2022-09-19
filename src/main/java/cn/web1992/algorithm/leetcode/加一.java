@@ -1,5 +1,8 @@
 package cn.web1992.algorithm.leetcode;
 
+/**
+ * @link {https://leetcode.cn/leetbook/read/top-interview-questions-easy/x2cv1c/}
+ */
 public class 加一 {
 
     public static void main(String[] args) {
