@@ -6,6 +6,7 @@ package cn.web1992.algorithm.leetcode;
  * @implNote 反转链表
  * @link {https://www.bilibili.com/video/BV1JS4y1Z7Lu}
  * @link {https://www.bilibili.com/video/BV1VL411u7TK}
+ * @link {https://leetcode.cn/problems/reverse-linked-list/}
  */
 public class 反转链表 {
 
