@@ -10,7 +10,7 @@ import java.util.Set;
  * @link {https://www.bilibili.com/video/BV1ja41117rS}
  * @date 2022/2/25  9:29 下午
  */
-public class 最小覆盖子串Test01 {
+public class 最小覆盖子串Test001 {
     public static void main(String[] args) {
         String target = "ABC";
         String searchTxt = "ADOBECODEBANC";
