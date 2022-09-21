@@ -1,4 +1,4 @@
-package cn.web1992.algorithm.sort;
+package cn.web1992.algorithm.leetcode.test;
 
 import java.util.Arrays;
 
@@ -15,24 +15,16 @@ public class 堆排序3 {
     public static void main(String[] args) {
         int[] arr = new int[]{4, 10, 3, 5, 1, 2};
         sort(arr);
-        // heapify(arr, arr.length, 0);
-        //buildHeap(arr);
         System.out.println("sorted:" + Arrays.toString(arr));
     }
 
 
     public static void sort(int[] arr) {
-        sort0(arr);
-    }
 
-    public static void sort0(int[] arr) {
-        // 构造堆
         buildHeap(arr);
-        // 把最【后一个元素】与【第一个元素】进行交换，然后继续进行 堆化 操作
-        // 从后往前进行 堆化 操作
-        for (int j = arr.length - 1; j >= 0; j--) {
-            swap(arr, j, 0);// 默认是最大堆，下标=0的位置，是最大的元素，这里进行交换，然后继续 堆化
-            heapify(arr, j, 0);
+        for (int i = arr.length - 1; i >= 0; i--) {
+            swap(arr, i, 0);
+            heapify(arr, i, 0);
         }
 
     }
@@ -43,6 +35,7 @@ public class 堆排序3 {
      *     | \
      *     3  4
      * </pre>
+     *
      * @param arr         数组
      * @param len         数组长度
      * @param parentIndex 从哪个元素开始 堆化
@@ -50,15 +43,34 @@ public class 堆排序3 {
      */
     public static void heapify(int[] arr, int len, int parentIndex) {
 
+        int maxI = parentIndex;
 
+        int c1 = 2 * parentIndex + 1;
+        int c2 = c1 + 1;
+
+        if (c1 < len && arr[c1] > arr[maxI]) {
+            maxI = c1;
+        }
+
+        if (c2 < len && arr[c2] > arr[maxI]) {
+            maxI = c2;
+        }
+
+        if (maxI != parentIndex) {
+            swap(arr, maxI, parentIndex);
+            heapify(arr, len, maxI);
+        }
     }
 
 
     public static void buildHeap(int[] arr) {
 
 
-        for (int i = 0; i < arr.length; i++) {
+        int lastIndex = arr.length - 1;
+        int parentIndex = (lastIndex - 1) / 2;
 
+        for (int i = parentIndex; i >= 0; i--) {
+            heapify(arr, arr.length, i);
         }
 
     }

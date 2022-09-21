@@ -1,4 +1,4 @@
-package cn.web1992.algorithm.sort;
+package cn.web1992.algorithm.leetcode.test;
 
 import java.util.Arrays;
 

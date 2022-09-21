@@ -45,10 +45,6 @@ public class 堆排序 {
      */
     public static void heapify(int[] arr, int len, int parentIndex) {
 
-        if (parentIndex >= len) {
-            return;
-        }
-
         int c1 = 2 * parentIndex + 1;
         int c2 = 2 * parentIndex + 2;
         int max = parentIndex;
