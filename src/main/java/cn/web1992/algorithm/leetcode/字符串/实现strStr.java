@@ -22,6 +22,10 @@ public class 实现strStr {
                 return 0;
             }
 
+            if (needle.length() > haystack.length()) {
+                return -1;
+            }
+
             int[] next = getNext(needle);
             int len = haystack.length();
 
