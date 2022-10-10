@@ -24,6 +24,7 @@ public class 删除链表的倒数第N个节点2 {
     static class Solution {
 
         // 1->2->3->4->5
+        // 快慢指针
         public ListNode removeNthFromEnd(ListNode head, int n) {
 
             ListNode slow = head;
