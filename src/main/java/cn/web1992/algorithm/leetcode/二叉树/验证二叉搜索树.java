@@ -25,6 +25,12 @@ public class 验证二叉搜索树 {
             return isValidBST0(root);
         }
 
+        /**
+         * 中需遍历: 从小到大的 输出序列， max.val >= root.val 说明是无序的
+         *
+         * @param root
+         * @return
+         */
         public boolean isValidBST0(TreeNode root) {
 
             if (root == null) {
