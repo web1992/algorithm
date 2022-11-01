@@ -48,7 +48,7 @@ public class 分割回文串 {
 
                 // 处理子串
                 partition(str, i + 1);
-                System.out.println("path=" + path);
+                //System.out.println("path=" + path);
                 path.removeLast();
             }
 
