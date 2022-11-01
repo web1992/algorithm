@@ -1,4 +1,4 @@
-package cn.web1992.algorithm.leetcode;
+package cn.web1992.algorithm.leetcode.回溯算法;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
