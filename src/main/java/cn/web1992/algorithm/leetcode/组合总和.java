@@ -1,9 +1,13 @@
 package cn.web1992.algorithm.leetcode;
 
+import java.util.ArrayList;
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
  * @link {https://leetcode.cn/problems/combination-sum/}
+ * @link {https://programmercarl.com/0039.%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C.html}
  */
 public class 组合总和 {
 
@@ -37,9 +41,36 @@ public class 组合总和 {
 
     static class Solution {
 
+        // 满足条件的组合
+        List<List<Integer>> ans = new ArrayList<>();
+        // 可能的组合
+        Deque<Integer> path = new LinkedList<>();
+
         public List<List<Integer>> combinationSum(int[] candidates, int target) {
 
-            return null;
+            getNums(candidates, target, 0, 0);
+            return ans;
+        }
+
+
+        public void getNums(int[] arr, int target, int sum, int startIndex) {
+
+            if (sum > target) {
+                return;
+            }
+
+            if (sum == target) {
+                ans.add(new ArrayList<>(path));
+                return;
+            }
+
+            for (int i = startIndex; i < arr.length; i++) {
+                path.add(arr[i]);
+                getNums(arr, target, arr[i] + sum, i);
+                //System.out.println("path=" + path);
+                path.removeLast();
+            }
+
         }
     }
 
