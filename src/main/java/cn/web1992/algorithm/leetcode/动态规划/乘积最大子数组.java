@@ -37,11 +37,11 @@ class Solution {
             dp[i][1] = Math.max(Math.max(n1, n2), num);
         }
 
-        int res = Integer.MIN_VALUE;
-        for (int i = 0; i < len; i++) {
-            res = Math.max(res, dp[i][1]);
+        int max = dp[0][1];
+        for (int i = 1; i < len; i++) {
+            max = Math.max(max, dp[i][1]);
         }
-        return res;
+        return max;
     }
 
 
