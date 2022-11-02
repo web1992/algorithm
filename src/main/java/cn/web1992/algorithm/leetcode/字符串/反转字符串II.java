@@ -1,4 +1,4 @@
-package cn.web1992.algorithm.leetcode;
+package cn.web1992.algorithm.leetcode.字符串;
 
 /**
  * @author web1992
