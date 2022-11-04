@@ -14,9 +14,25 @@ public class 目标和 {
     }
 
     static class Solution {
-        public int findTargetSumWays(int[] nums, int target) {
 
-            return 0;
+        int count = 0;
+
+        public int findTargetSumWays(int[] nums, int target) {
+            doSum(nums, target, 0, 0);
+            return count;
+        }
+
+        private void doSum(int[] nums, int target, int sum, int start) {
+            if (start >= nums.length) {
+                if (sum == target) {
+                    count++;
+                }
+                return;
+            }
+
+            doSum(nums, target, sum - nums[start], start + 1);
+            doSum(nums, target, sum + nums[start], start + 1);
+
         }
     }
 
