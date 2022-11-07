@@ -1,4 +1,4 @@
-package cn.web1992.algorithm.leetcode.动态规划;
+package cn.web1992.algorithm.leetcode.回溯算法;
 
 import java.util.Arrays;
 import java.util.HashSet;
