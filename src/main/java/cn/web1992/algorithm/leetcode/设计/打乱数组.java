@@ -1,7 +1,5 @@
 package cn.web1992.algorithm.leetcode.设计;
 
-import cn.web1992.algorithm.leetcode.ListNode;
-
 import java.util.Random;
 
 /**

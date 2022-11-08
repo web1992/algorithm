@@ -1,14 +1,13 @@
-package cn.web1992.algorithm.leetcode;
+package cn.web1992.algorithm.leetcode.数组;
 
 import java.util.Arrays;
 
 /**
- * @link {https://leetcode.cn/leetbook/read/top-interview-questions-easy/x2ba4i/}
+ * @link {https://leetcode.cn/leetbook/read/top-interview-questions/xmy9jh/}
  */
-public class 移动零 {
+public class 移动零_3 {
 
     public static void main(String[] args) {
-
         int[] arr = new int[]{0, 1, 0, 3, 12};
         new Solution().moveZeroes(arr);
         System.out.println(Arrays.toString(arr));
@@ -16,20 +15,31 @@ public class 移动零 {
 
     static class Solution {
 
-        // [0,1,0,3,12] -> [1,3,12,0,0]
+        /**
+         * 输入: nums = [0,1,0,3,12]
+         * 输出: [1,3,12,0,0]
+         *
+         * @param nums
+         */
         public void moveZeroes(int[] nums) {
 
-            int left = 0;
+            if (nums.length == 1) {
+                return;
+            }
 
+            int left = 0;
             for (int i = 0; i < nums.length; i++) {
                 if (nums[i] != 0) {
                     nums[left++] = nums[i];
                 }
             }
-            for (int j = left; j < nums.length; j++) {
-                nums[j] = 0;
+
+            for (int i = left; i < nums.length; ) {
+                nums[i++] = 0;
             }
 
         }
+
+
     }
 }

@@ -1,4 +1,4 @@
-package cn.web1992.algorithm.leetcode;
+package cn.web1992.algorithm.leetcode.数组;
 
 import java.util.Arrays;
 
@@ -16,6 +16,7 @@ public class 移动零_2 {
 
     static class Solution {
 
+        // 数组交换
         // [0,1,0,3,12] -> [1,3,12,0,0]
         public void moveZeroes(int[] nums) {
 
