@@ -19,7 +19,7 @@ public class 单词搜索II {
 
         //
         char[][] board = new char[][]{{'a', 'b'}, {'c', 'd'}};
-        String[] words = new String[]{"abcb"};
+        String[] words = new String[]{"ab"};
 
         List<String> ans = new Solution().findWords(board, words);
         System.out.println(ans);
@@ -39,7 +39,7 @@ public class 单词搜索II {
             Set<String> ans = new HashSet<>();
 
             for (int i = 0; i < board.length; i++) {
-                for (int j = 0; j < board[i].length; j++) {
+                for (int j = 0; j < board[0].length; j++) {
                     do_findWords(board, ans, trie, i, j);
                 }
             }
@@ -48,23 +48,24 @@ public class 单词搜索II {
         }
 
         public void do_findWords(char[][] board, Set<String> set, Trie root, int i, int j) {
-            char ch = board[i][j];
 
-            if (!root.map.containsKey(ch)) {
+
+            if (!root.map.containsKey(board[i][j])) {
                 return;
             }
-
+            char ch = board[i][j];
+            root = root.map.get(ch);
             if (root.isWord()) {
                 set.add(root.word);
             }
 
             // 设置已经处理过的标记
-            board[i][j] = 'x';
+            board[i][j] = '#';
 
             for (int[] dir : dirs) {
                 int ii = i + dir[0], jj = j + dir[1];
-                if (ii >= 0 && ii < board.length && jj >= 0 && j < board[ii].length) {
-                    do_findWords(board, set, root, i, j);
+                if (ii >= 0 && ii < board.length && jj >= 0 && jj < board[0].length) {
+                    do_findWords(board, set, root, ii, jj);
                 }
             }
 
