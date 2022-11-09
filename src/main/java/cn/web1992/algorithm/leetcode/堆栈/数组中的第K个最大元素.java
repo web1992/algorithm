@@ -1,5 +1,7 @@
 package cn.web1992.algorithm.leetcode.堆栈;
 
+import java.util.Random;
+
 /**
  * @link {https://leetcode.cn/leetbook/read/top-interview-questions/xal9h6/}
  */
@@ -13,6 +15,7 @@ public class 数组中的第K个最大元素 {
     }
 
     static class Solution {
+        Random random = new Random();
 
         public int findKthLargest(int[] nums, int k) {
             int p = part(nums, 0, nums.length - 1);
@@ -25,6 +28,12 @@ public class 数组中的第K个最大元素 {
 
             }
             return nums[p];
+        }
+
+        public int randomPartition(int[] a, int l, int r) {
+            int i = random.nextInt(r - l + 1) + l;
+            swap(a, i, r);
+            return part(a, l, r);
         }
 
         public int part(int[] nums, int left, int right) {
