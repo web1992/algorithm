@@ -27,19 +27,20 @@ public class 递增的三元子序列 {
         public boolean increasingTriplet(int[] nums) {
 
 
-            int n = nums[0];
-            int m = Integer.MAX_VALUE;
+            // .... num1 ....  num2 ....
+            int num1 = nums[0];
+            int num2 = Integer.MAX_VALUE;
 
             for (int i = 1; i < nums.length; i++) {
 
-                if (nums[i] <= n) {
-                    n = nums[i];
-                } else if (nums[i] <= m) {
-                    m = nums[i];
-                } else {
+                int n = nums[i];
+                if (n > num2) {
                     return true;
+                } else if (n > num1) {
+                    num2 = n;
+                } else {
+                    num1 = n;
                 }
-
             }
 
             return false;
