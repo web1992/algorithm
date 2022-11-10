@@ -3,7 +3,7 @@ package cn.web1992.algorithm.leetcode.堆栈;
 /**
  * @link {https://leetcode.cn/leetbook/read/top-interview-questions/xal9h6/}
  */
-public class 数组中的第K个最大元素2 {
+public class 数组中的第K个最大元素_快排_随机 {
 
     public static void main(String[] args) {
         int[] arr = new int[]{3, 2, 1, 5, 6, 4};
