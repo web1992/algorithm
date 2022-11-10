@@ -7,7 +7,14 @@ import java.util.Arrays;
  * @date 2022/4/18  10:21
  * @link {https://www.bilibili.com/video/BV1Eb41147dK}
  * <pre>
+ *  一种特殊的树
  *  堆的应用：优先级队列、求 Top K 和求中位数。
+ *
+ * </pre>
+ *
+ * <pre>
+ *     1. 堆是一个完全二叉树；
+ *     2. 堆中每一个节点的值都必须大于等于（或小于等于）其子树中每个节点的值。
  * </pre>
  */
 public class 堆排序 {
@@ -28,6 +35,7 @@ public class 堆排序 {
     public static void sort0(int[] arr) {
         // 构造堆
         buildHeap(arr);
+        // 排序操作:
         // 把最【后一个元素】与【第一个元素】进行交换，然后继续进行 堆化 操作
         // 从后往前进行 堆化 操作
         for (int j = arr.length - 1; j >= 0; j--) {
