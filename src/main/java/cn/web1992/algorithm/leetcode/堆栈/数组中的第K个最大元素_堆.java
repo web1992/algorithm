@@ -18,12 +18,14 @@ public class 数组中的第K个最大元素_堆 {
 
         public int findKthLargest(int[] nums, int k) {
 
+            // 5,6,3,2,1 k=2
             int len = nums.length;
+            int heapLen = nums.length;
             buildHeap(nums, len);
             int parentIndex = 0;
-            for (int i = len - 1; i >= nums.length - k + 1; i--) {
-                swap(nums, i, parentIndex);
-                heapfiy(nums, --len, parentIndex);
+            for (int i = heapLen - 1; i >= len - k + 1; i--) {
+                swap(nums, i, parentIndex);// 把最大的元素移动到数组的最后
+                heapfiy(nums, --heapLen, parentIndex);// 缩小堆的大小+进行堆化处理
             }
 
             return nums[0];
