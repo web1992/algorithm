@@ -18,16 +18,18 @@ public class 数组中的第K个最大元素 {
         Random random = new Random();
 
         public int findKthLargest(int[] nums, int k) {
-            int p = part(nums, 0, nums.length - 1);
-            while (p + 1 != k) {
-                if (p + 1 > k) {
-                    p = part(nums, 0, p - 1);
-                } else {
-                    p = part(nums, p + 1, nums.length - 1);
-                }
 
+            return quickSelect(nums, 0, nums.length - 1, nums.length - k);
+        }
+
+        public int quickSelect(int[] nums, int left, int right, int index) {
+
+            int p = randomPartition(nums, left, right);
+            if (p == index) {
+                return nums[p];
             }
-            return nums[p];
+
+            return p > index ? quickSelect(nums, 0, p - 1, index) : quickSelect(nums, p + 1, right, index);
         }
 
         public int randomPartition(int[] a, int l, int r) {
@@ -41,7 +43,7 @@ public class 数组中的第K个最大元素 {
             int i = left;
 
             for (int j = i; j < right; j++) {
-                if (nums[j] >= val) {
+                if (nums[j] <= val) {
                     swap(nums, i, j);
                     i++;
                 }
