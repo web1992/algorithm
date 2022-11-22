@@ -43,6 +43,7 @@ public class 数据流的中位数 {
 
         public void addNum(int num) {
 
+            // heap 为空的处理
             if (maxHeap.isEmpty() && minHeap.isEmpty()) {
                 maxHeap.offer(num);
                 return;
@@ -56,6 +57,7 @@ public class 数据流的中位数 {
                 return;
             }
 
+            // 不为空的处理
             if (num > minHeap.peek()) {
                 minHeap.offer(num);
                 if (minHeap.size() > maxHeap.size() + 1) {
