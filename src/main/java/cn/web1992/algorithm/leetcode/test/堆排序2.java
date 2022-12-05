@@ -30,9 +30,10 @@ public class 堆排序2 {
         buildHeap(arr);
         // 把最【后一个元素】与【第一个元素】进行交换，然后继续进行 堆化 操作
         // 从后往前进行 堆化 操作
+        int parentIndex = 0;
         for (int j = arr.length - 1; j >= 0; j--) {
-            swap(arr, j, 0);// 默认是最大堆，下标=0的位置，是最大的元素，这里进行交换，然后继续 堆化
-            heapify(arr, j, 0);
+            swap(arr, j, parentIndex);// 默认是最大堆，下标=0的位置，是最大的元素，这里进行交换，然后继续 堆化
+            heapify(arr, j, parentIndex);
         }
 
     }
