@@ -31,9 +31,11 @@ public class 滑动窗口最大值 {
 
             ans.add(queue.peek().num);
 
+            // .......i.....
+            // ...k...i.....
             for (int i = k; i < len; i++) {
                 queue.offer(new Point(nums[i], i));
-                while (queue.peek().index <= i - k) {// 如果第一个元素（最大的元素）的索引不满足，则 出队
+                while (queue.peek().index <= i - k) {// 如果第一个元素（最大的元素）的索引不满足，则 出队(i - k=窗口的起始位置)
                     queue.poll();
                 }
                 ans.add(queue.peek().num);
