@@ -1,6 +1,8 @@
 package cn.web1992.algorithm.leetcode.堆栈;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.PriorityQueue;
 
 /**
@@ -19,22 +21,44 @@ public class 滑动窗口最大值 {
 
         public int[] maxSlidingWindow(int[] nums, int k) {
 
-            PriorityQueue<Integer> queue = new PriorityQueue<>((n1, n2) -> n2 - n1);
+            PriorityQueue<Point> queue = new PriorityQueue<>(this::cmp);
 
-            int[] ans = new int[nums.length];
-
-            int i = 0;
-            for (int num : nums) {
-                if (queue.size() < k) {
-                    queue.offer(num);
-                } else {
-                    Integer max = queue.poll();
-                    ans[i++] = max;
-                    queue.offer(num);
-                }
+            List<Integer> ans = new ArrayList<>();
+            int len = nums.length;
+            for (int i = 0; i < k; i++) {
+                queue.offer(new Point(nums[i], i));
             }
 
-            return ans;
+            ans.add(queue.peek().num);
+
+            for (int i = k; i < len; i++) {
+                queue.offer(new Point(nums[i], i));
+                while (queue.peek().index <= i - k) {// 如果第一个元素（最大的元素）的索引不满足，则 出队
+                    queue.poll();
+                }
+                ans.add(queue.peek().num);
+            }
+
+            int[] ansArr = new int[ans.size()];
+            for (int i = 0; i < ans.size(); i++) {
+                ansArr[i] = ans.get(i);
+            }
+            return ansArr;
+        }
+
+
+        public int cmp(Point p1, Point p2) {
+            return p2.num - p1.num;
+        }
+
+        public static class Point {
+            int num;
+            int index;
+
+            public Point(int num, int index) {
+                this.num = num;
+                this.index = index;
+            }
         }
     }
 }
