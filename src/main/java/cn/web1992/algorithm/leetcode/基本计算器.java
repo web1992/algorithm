@@ -80,12 +80,6 @@ public class 基本计算器 {
     }
 
     private static boolean isNum(char ch) {
-        try {
-            Integer.parseInt(ch + "");
-            return true;
-        } catch (NumberFormatException e) {
-            // ignore
-            return false;
-        }
+        return Character.isDigit(ch);
     }
 }
