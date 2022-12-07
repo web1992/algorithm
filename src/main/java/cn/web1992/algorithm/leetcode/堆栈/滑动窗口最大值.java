@@ -49,6 +49,7 @@ public class 滑动窗口最大值 {
         }
 
 
+        // 大顶堆
         public int cmp(Point p1, Point p2) {
             return p2.num - p1.num;
         }
