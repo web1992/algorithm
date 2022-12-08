@@ -34,13 +34,13 @@ class Node {
             Node t = head;
             while (t != null) {
                 Node node = new Node(t.val);
-                map.put(t, node);
+                map.put(t, node);// key =旧节点，value=旧节点的复制
                 t = t.next;
             }
 
             t = head;
             while (t != null) {
-                map.get(t).next = map.get((t.next));
+                map.get(t).next = map.get((t.next));// key =旧节点，value=旧节点的复制
                 map.get(t).random = map.get((t.random));
                 t = t.next;
             }
