@@ -22,7 +22,6 @@ public class 环形链表2 {
 
         public boolean hasCycle(ListNode head) {
 
-            ListNode t = head;
             ListNode fast = head;
             ListNode slow = head;
             while (fast != null && fast.next != null && slow != null) {
