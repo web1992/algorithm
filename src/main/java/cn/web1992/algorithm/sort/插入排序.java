@@ -32,7 +32,7 @@ public class 插入排序 {
                 }
             }
 
-            // 插入
+            // 插入， 这个操作是理解的难点
             arr[j + 1] = val;
 
             System.out.println();
