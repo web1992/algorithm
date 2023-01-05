@@ -15,6 +15,7 @@ public class 插入排序 {
 
 
     // 插入排序（Insertion Sort）
+    // 核心思路：在已经有序的部分，找到位置，插入(数据需要后移)
     public static void sort(int[] arr) {
 
 
@@ -28,7 +29,7 @@ public class 插入排序 {
                 if (arr[j] > val) {
                     arr[j + 1] = arr[j];// 移动（向后面移动）
                 } else {
-                    break;
+                    break;// 前面的数据已经有序了，需要break
                 }
             }
 
