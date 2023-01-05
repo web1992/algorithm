@@ -9,7 +9,7 @@ import java.util.Arrays;
 public class MergeSort6 {
 
     public static void main(String[] args) {
-        int[] arr = new int[]{1, 5, 6, 72, 432, 234, 2, 9, -2, 0, -1, -2};
+        int[] arr = new int[]{5, 4, 3, 2, 1, 0, -1};
         sort(arr);
         System.out.println(Arrays.toString(arr));
     }
