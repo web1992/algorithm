@@ -54,7 +54,7 @@ public class MergeSort6 {
             temp[i++] = arr[rightIndex++];
         }
 
-        // 复制数据，从left下面处开始
+        // 复制数据，从left下标处开始
         while (left <= right) {
             arr[left] = temp[left++];
         }
