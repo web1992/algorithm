@@ -3,6 +3,7 @@ package cn.web1992.algorithm.leetcode.设计;
 /**
  * https://leetcode.cn/leetbook/read/top-interview-questions/xaeate/
  *
+ * @link {https://leetcode.cn/problems/implement-trie-prefix-tree/solution/trie-tree-de-shi-xian-gua-he-chu-xue-zhe-by-huwt/}
  * @link {https://leetcode.cn/problems/implement-trie-prefix-tree/solutions/717239/shi-xian-trie-qian-zhui-shu-by-leetcode-ti500/}
  */
 public class 实现_Trie_前缀树2 {
