@@ -9,7 +9,7 @@ package cn.web1992.algorithm.leetcode.背包;
 public class 背包 {
 
     public static void main(String[] args) {
-        int[] weight = {1, 3, 4};// 物品的重量
+        int[] weight = {1, 3, 4};// 物品的重量（占用背包的大小）
         int[] value = {15, 20, 30};// 物品的价值
         int bagsize = 4;
         testweightbagproblem(weight, value, bagsize);
