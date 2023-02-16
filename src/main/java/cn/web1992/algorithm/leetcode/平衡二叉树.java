@@ -1,6 +1,8 @@
 package cn.web1992.algorithm.leetcode;
 
 /**
+ * 给定一个二叉树，判断它是否是高度平衡的二叉树。
+ *
  * @link {https://leetcode.cn/problems/balanced-binary-tree/}
  * @link {https://programmercarl.com/0110.%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91.html}
  */
