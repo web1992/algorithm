@@ -5,6 +5,7 @@ package cn.web1992.algorithm.leetcode;
  * @date 2022/4/23  20:20
  * @link {https://leetcode-cn.com/problems/trapping-rain-water/}
  * @link {https://www.bilibili.com/video/BV1D34y1Y7xp}
+ * @link {https://leetcode.cn/problems/trapping-rain-water/solutions/9112/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by-w-8/}
  */
 public class 接雨水 {
 
