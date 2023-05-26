@@ -20,31 +20,15 @@ public class 买卖股票的最佳时机2 {
 
 
     // 动态规划
-    public static int maxProfit(int[] prices) {
-
-        int len = prices.length;
-        // dp[i][0]=在第i天出股票
-        // dp[i][1]=在第i天入股票
-        int dp0 = 0;
-        int dp1 = -prices[0];
-
-        for (int i = 1; i < len; i++) {
-            dp0 = Math.max(dp0, dp1 + prices[i]);
-            dp1 = Math.max(dp1, dp0 - prices[i]);
-        }
-        return dp0;
-    }
-
-    // 动态规划
     static class Solution {
         public int maxProfit(int[] prices) {
             int n = prices.length;
             int[][] dp = new int[n][2];
-            dp[0][0] = 0;
-            dp[0][1] = -prices[0];
+            dp[0][0] = 0;// 没有持有股票
+            dp[0][1] = -prices[0]; // 持有股票
             for (int i = 1; i < n; ++i) {
                 dp[i][0] = Math.max(dp[i - 1][0], dp[i - 1][1] + prices[i]);
-                dp[i][1] = Math.max(dp[i - 1][1], -prices[i]);
+                dp[i][1] = Math.max(dp[i - 1][1], dp[i - 1][0] - prices[i]);
             }
 
             for (int i = 0; i < dp.length; i++) {
