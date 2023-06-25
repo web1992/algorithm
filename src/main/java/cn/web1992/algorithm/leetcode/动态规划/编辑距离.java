@@ -1,4 +1,4 @@
-package cn.web1992.algorithm.leetcode;
+package cn.web1992.algorithm.leetcode.动态规划;
 
 /**
  * @link {https://leetcode.cn/problems/edit-distance/}
@@ -22,9 +22,6 @@ public class 编辑距离 {
      */
     static class Solution {
 
-        //        在单词 word1 中插入一个字符；
-        //        在单词 word2 中插入一个字符；
-        //        修改单词 word1 的一个字符。
         public int minDistance(String word1, String word2) {
 
             int len1 = word1.length();
