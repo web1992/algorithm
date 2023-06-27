@@ -2,6 +2,7 @@ package cn.web1992.algorithm.leetcode.test;
 
 /**
  * @link {https://leetcode.cn/problems/edit-distance/}
+ * @link {https://programmercarl.com/0072.%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB.html#_72-%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB}
  */
 public class 编辑距离_Test {
 
@@ -23,14 +24,14 @@ public class 编辑距离_Test {
             int len1 = word1.length();
             int len2 = word2.length();
 
-            // dp[i][j] 以word1 i 结尾的 到 word2 j 结尾的 最小编辑距离
+            // dp[i][j] 以 word1[i-1] 结尾的和以 word2[j-1] 结尾的 最小编辑距离
             // i,j结尾的含义:
             //          需要计算编辑距离，无法避免遍历整字符串
             //          以i,j结尾，也代表了一个遍历的过程，
             //          如果我们，能遍历的计算出，每个i,j结尾的编辑距离最小操作（其实也就是子串）
             //          （是不是？）就能计算出整个字符串的最小编辑距离操作
 
-            // 如果理解了上面的含义，那么此问题，也可以用 操作子串+动态规划 的方式去解决问题。
+            // 如果理解了上面的含义，那么此问题，也可以用 操作子串+动态规划 的思路去解决问题。
 
             int[][] dp = new int[len1 + 1][len2 + 1];
 
@@ -61,7 +62,7 @@ public class 编辑距离_Test {
 
             for (int i = 0; i <= len1; i++) {
                 for (int j = 0; j < len2; j++) {
-                    System.out.print( dp[i][j] + ",");
+                    System.out.print(dp[i][j] + ",");
                 }
                 System.out.println();
             }
