@@ -1,4 +1,4 @@
-package cn.web1992.algorithm.leetcode;
+package cn.web1992.algorithm.leetcode.动态规划;
 
 /**
  * @link {https://leetcode.cn/problems/integer-break/}
