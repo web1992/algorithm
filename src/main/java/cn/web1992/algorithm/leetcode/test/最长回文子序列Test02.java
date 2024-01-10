@@ -1,6 +1,8 @@
 
 package cn.web1992.algorithm.leetcode.test;
 
+import cn.web1992.algorithm.arrays.ArraysTest;
+
 /**
  * @link {https://programmercarl.com/0516.%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%97.html#%E6%80%9D%E8%B7%AF}
  */
@@ -30,8 +32,9 @@ public class 最长回文子序列Test02 {
                     } else {
                         dp[i][j] = Math.max(Math.max(dp[i + 1][j], dp[i][j - 1]), dp[i][j]);
                     }
+                    ArraysTest.printArray(dp);
+                    ArraysTest.printArraySplit(dp);
                 }
-
             }
 
             return dp[0][len - 1];
